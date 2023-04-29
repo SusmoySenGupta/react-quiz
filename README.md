@@ -16,6 +16,8 @@
 
 A simple quiz app built with React and Firebase. This app allows users to take a quiz based on a video tutorial and see their score at the end.
 
+##### Live Demo: https://ssg-react-quiz.netlify.app/
+
 ## Installation
 
 -   Clone the repository
