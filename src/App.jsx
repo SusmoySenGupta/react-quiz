@@ -1,5 +1,6 @@
 import Layout from './components/Layout';
-import Quiz from './pages/Quiz';
+import Result from './pages/Result';
+// import Quiz from './pages/Quiz';
 // import Login from './pages/auth/Login';
 // import SignUp from './pages/auth/SignUp';
 // import Home from './pages/Home';
@@ -11,7 +12,8 @@ function App() {
 			{/* <Home /> */}
 			{/* <SignUp /> */}
 			{/* <Login /> */}
-			<Quiz />
+			{/* <Quiz /> */}
+			<Result />
 		</Layout>
 	);
 }
