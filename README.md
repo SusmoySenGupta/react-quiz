@@ -18,13 +18,21 @@ A simple quiz app built with React and Firebase. This app allows users to take a
 
 ##### Live Demo: <a href="https://ssg-react-quiz.netlify.app/" target="_blank">Click here</a>
 
-## Installation
+## Features
+
+-   User authentication
+-   Protected routes
+-   Quiz questions and answers stored in Firebase
+-   Score is calculated and displayed at the end of the quiz
+-   User can retake the quiz
+-   User can watch the video tutorial
+
+## Installation & Usage
 
 -   Clone the repository
 -   Run `yarn` to install dependencies
-
-## Usage
-
+-   Copy the `.env.example` file and rename it to `.env.local`
+-   Add your Firebase config to the `.env.local` file
 -   Run `yarn start` to start the app
 -   Navigate to `http://localhost:3000` to view the app
 
