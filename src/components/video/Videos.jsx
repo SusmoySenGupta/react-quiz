@@ -1,23 +1,31 @@
+import { useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import useVideos from '../../hooks/useVideos';
-import classes from '../../styles/Videos.module.css';
+import Spinner from '../ui/Spinner';
 import Video from './Video';
 
 export default function Videos() {
-	const { isLoading, isError, videos } = useVideos();
+	const PER_PAGE = +process.env.REACT_APP_VIDEOS_PER_PAGE;
+	const [page, setPage] = useState(1);
+	const { isLoading, isError, videos, hasMore } = useVideos(page, PER_PAGE);
 
-	// Decide what to render based on the state of the request
-	let content = null;
-	if (isLoading) {
-		content = <div>Loading...</div>;
-	} else if (isError) {
-		content = <div>Error</div>;
-	} else if (videos.length === 0) {
-		content = <div>No videos found</div>;
-	} else {
-		content = videos.map((video, index) => (
-			<Video key={video.youtubeID} video={video} />
-		));
-	}
-
-	return <div className={classes.videos}>{content}</div>;
+	return (
+		<div>
+			{videos.length > 0 && (
+				<InfiniteScroll
+					dataLength={videos.length}
+					hasMore={hasMore}
+					next={() => setPage(page + PER_PAGE)}
+					loader={<Spinner />}
+				>
+					{videos.map((video) => (
+						<Video key={video.youtubeID} video={video} />
+					))}
+				</InfiniteScroll>
+			)}
+			{!isLoading && videos.length === 0 && <div>No data found!</div>}
+			{isError && <div>There was an error!</div>}
+			{isLoading && <div>Loading...</div>}
+		</div>
+	);
 }
