@@ -7,6 +7,7 @@ import MiniPlayer from '../components/MiniPlayer';
 import ProgressBar from '../components/ProgressBar';
 import Spinner from '../components/ui/Spinner';
 import { useAuth } from '../contexts/AuthContext';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import useQuestions from '../hooks/useQuestions';
 
 const initialState = [];
@@ -33,6 +34,8 @@ const reducer = (state, action) => {
 };
 
 export default function Quiz() {
+	useDocumentTitle('Quiz');
+
 	const navigate = useNavigate();
 	const { videoID } = useParams();
 	const { currentUser } = useAuth();

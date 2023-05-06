@@ -4,10 +4,13 @@ import Analysis from '../components/Analysis';
 import Summary from '../components/Summary';
 import Spinner from '../components/ui/Spinner';
 import useAnswers from '../hooks/useAnswers';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const EACH_QUESTION_POINT = 5;
 
 export default function Result() {
+	useDocumentTitle('Result');
+
 	const navigate = useNavigate();
 	const { videoID } = useParams();
 	const { state } = useLocation() || {};
