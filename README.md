@@ -46,3 +46,11 @@ A simple quiz app built with React and Firebase. This app allows users to take a
 ## License
 
 MIT License
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/32735407/236639466-6299acc5-2457-4c3b-9e3f-23aa0e1b9201.png)
+
+![image](https://user-images.githubusercontent.com/32735407/236639482-4b2afe27-3ec1-44be-9ee2-08f07ca1dc81.png)
+
+![image](https://user-images.githubusercontent.com/32735407/236639521-30000e75-077d-475b-9958-77e61dd80cbc.png)
