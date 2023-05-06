@@ -48,10 +48,6 @@ export default function useVideos(page = 1, limit = 10) {
 				setIsLoading(false);
 			}
 		}
-
-		setTimeout(() => {
-			fetchVideos();
-		}, 2000);
 	}, [page, limit]);
 
 	return {
