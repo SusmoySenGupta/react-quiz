@@ -80,7 +80,11 @@ export default function Quiz() {
 			[videoID]: qna,
 		});
 
-		navigate(`/result/${uid}`, { state: qna });
+		navigate(`/result/${videoID}`, {
+			state: {
+				qna,
+			},
+		});
 	};
 
 	const progress =

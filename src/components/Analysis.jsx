@@ -1,15 +1,11 @@
 import classes from '../styles/Analysis.module.css';
-import Question from './Question';
+import Questions from './Questions';
 
-export default function Analysis() {
+export default function Analysis({ answers }) {
 	return (
 		<div className={classes.analysis}>
 			<h1>Question Analysis</h1>
-			<h4>You answered 5 out of 10 questions correctly</h4>
-
-			<Question />
-			<Question />
-			<Question />
+			<Questions answers={answers} />
 		</div>
 	);
 }

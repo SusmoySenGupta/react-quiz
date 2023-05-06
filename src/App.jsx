@@ -25,7 +25,10 @@ function App() {
 
 						<Route path="/*" element={<PrivateOutlet />}>
 							<Route path="quiz/:videoID" element={<Quiz />} />
-							<Route path="result/:userID" element={<Result />} />
+							<Route
+								path="result/:videoID"
+								element={<Result />}
+							/>
 						</Route>
 					</Routes>
 				</Layout>
