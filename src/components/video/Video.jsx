@@ -6,7 +6,7 @@ export default function Video({ video }) {
 	const imageSource = `http://img.youtube.com/vi/${youtubeID}/maxresdefault.jpg`;
 
 	return (
-		<Link to={`/quiz`}>
+		<Link to={`/quiz/${youtubeID}`}>
 			<div className={classes.video}>
 				<img src={imageSource} alt={title} />
 				<p>{title}</p>

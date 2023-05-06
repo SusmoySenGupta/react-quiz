@@ -48,6 +48,8 @@ export default function useVideos(page = 1, limit = 10) {
 				setIsLoading(false);
 			}
 		}
+
+		fetchVideos();
 	}, [page, limit]);
 
 	return {

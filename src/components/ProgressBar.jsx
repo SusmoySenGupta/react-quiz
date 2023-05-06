@@ -1,30 +1,37 @@
-import { Link } from 'react-router-dom';
 import classes from '../styles/ProgressBar.module.css';
 import Button from './ui/Button';
 
-export default function ProgressBar() {
+export default function ProgressBar({ progress, onPrev, onNext, onSubmit }) {
 	return (
 		<div className={classes.progressBar}>
-			<div className={classes.backButton}>
+			<div className={classes.backButton} onClick={onPrev}>
 				<span className="material-icons-outlined"> arrow_back </span>
 			</div>
 			<div className={classes.rangeArea}>
-				<div className={classes.tooltip}>24% Complete!</div>
+				<div className={classes.tooltip}>{progress}% Complete!</div>
 				<div className={classes.rangeBody}>
 					<div
 						className={classes.progress}
-						style={{ width: '20%' }}
+						style={{ width: `${progress}%` }}
 					></div>
 				</div>
 			</div>
-			<Link to="/result">
-				<Button className="next">
-					<span>Next Question</span>
-					<span className="material-icons-outlined">
-						arrow_forward
-					</span>
-				</Button>
-			</Link>
+			<Button
+				className="next"
+				onClick={progress === 100 ? onSubmit : onNext}
+				style={{ marginRight: '10px' }}
+			>
+				{progress === 100 ? (
+					<span>Submit</span>
+				) : (
+					<>
+						<span>Next Question</span>
+						<span className="material-icons-outlined">
+							arrow_forward
+						</span>
+					</>
+				)}
+			</Button>
 		</div>
 	);
 }
